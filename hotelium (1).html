@@ -1,0 +1,412 @@
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: century Gothic, sans-serif;
+        transition: 0.6s;
+    }
+    
+    a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    
+    .navlist {
+        width: 105%;
+        padding: 10px 8vw;
+        position: fixed;
+        background: rgb(49, 22, 22);
+        z-index: 10;
+        font-size: 1.6em;
+    }
+    
+    .navlist2 {
+        width: 105%;
+        padding: 10px 8vw;
+        margin-top: 630px;
+        position: fixed;
+        color: #fff;
+        background: rgb(49, 22, 22);
+        z-index: 10;
+        font-size: 1.6em;
+    }
+    
+    .navlist ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    .navlist ul li:first-child {
+        flex: 1;
+    }
+    
+    .navlist ul h4 {
+        font-family: serif;
+        color: #fff;
+    }
+    
+    .navlist ul a {
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    
+    .navlist ul a:hover {
+        color: #f80;
+    }
+    
+    .sub-menu-1 {
+        display: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-1 {
+        display: block;
+        position: absolute;
+        background: rgb(100, 0, 8);
+        margin-top: 15px;
+        margin-left: -15px;
+    }
+    
+    .navlist ul li:hover .sub-menu-1 ul {
+        display: block;
+        margin: 20px;
+    }
+    
+    .navlist ul li:hover .sub-menu-1 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted white;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .navlist ul li:hover .sub-menu-1 ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-1 ul li a:hover {
+        color: #b2ff00;
+    }
+    
+    .fas fa-angle-right {
+        float: right;
+    }
+    
+    .sub-menu-2 {
+        display: none;
+    }
+    
+    .hover-me:hover .sub-menu-2 {
+        position: absolute;
+        display: block;
+        margin-top: -60px;
+        margin-left: 140px;
+        background: rgb(100, 0, 8);
+    }
+    
+    .sub-menu-3 {
+        display: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-3 {
+        display: block;
+        position: absolute;
+        background: rgb(100, 0, 8);
+        margin-top: 15px;
+        margin-left: -15px;
+    }
+    
+    .navlist ul li:hover .sub-menu-3 ul {
+        display: block;
+        margin: 10px;
+    }
+    
+    .navlist ul li:hover .sub-menu-3 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted white;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .navlist ul li:hover .sub-menu-3 ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-3 ul li a:hover {
+        color: #b2ff00;
+    }
+    
+    .sub-menu-4 {
+        display: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-4 {
+        display: block;
+        position: absolute;
+        background: rgb(100, 0, 8);
+        margin-top: 15px;
+        margin-left: -15px;
+    }
+    
+    .navlist ul li:hover .sub-menu-4 ul {
+        display: block;
+        margin: 10px;
+    }
+    
+    .navlist ul li:hover .sub-menu-4 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted white;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .navlist ul li:hover .sub-menu-4 ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .navlist ul li:hover .sub-menu-4 ul li a:hover {
+        color: #b2ff00;
+    }
+    /*container*/
+    
+    .container {
+        width: 100%;
+        height: 100vh;
+        padding-top: 30vh;
+        background-image: linear-gradient(#00000059, #00000048), url(images/pexels-quark-studio-2507010.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .container h1 {
+        font-family: serif;
+        margin-bottom: 20px;
+        word-spacing: 5px;
+        color: rgb(215, 224, 214);
+    }
+    
+    .container p {
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+    }
+    
+    .container button {
+        padding: 12px;
+        background: none;
+        border-radius: 12px;
+        border: 1px solid #f80;
+    }
+    
+    .container button:hover {
+        background: #f80;
+    }
+    /* CONTENT-BOX */
+    
+    .content-box {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .conttent-box>h2 {
+        text-align: center;
+        color: red;
+        margin: 20px;
+    }
+    
+    .conttent-box>h2::before,
+    .conttent-box>h2::after {
+        content: "------";
+        letter-spacing: -5px;
+        margin: 0 10px;
+    }
+    
+    .conttent-box .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .conttent-box .column {
+        width: 32%;
+        height: auto;
+        position: relative;
+    }
+    
+    .conttent-box img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .conttent-box .column a:last-child {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        top: 100%;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+        text-align: center;
+        line-height: 35vw;
+        font-size: 3vw;
+        font-weight: bolder;
+    }
+    
+    .conttent-box .column:hover a:last-child {
+        height: 100%;
+        top: 0;
+    }
+    
+    @media (max-width: 600px) {
+        .conttent-box .row {
+            flex-direction: column;
+        }
+        .conttent-box .column {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .conttent-box .column a:last-child {
+            line-height: 80vw;
+            font-size: 6vw;
+        }
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Gla University.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!..css file..>
+    <link rel="stylesheet" href="../all.css">
+    <!..Icons..>
+    <title>HOTELIUM</title>
+</head>
+
+<body background="https://cf.bstatic.com/xdata/images/hotel/max1280x900/275059820.jpg?k=2e21ee46dcef21eb71d07e31e1e556239b772817518c82b219d71913903a1ef0&o=&hp=1">
+    <nav class="navlist">
+        <ul>
+            <li>
+                <h4>
+                    <li><a href="#"><i class="fas fa-phone-alt"></i>8302709642</a></h4>
+                </li>
+                <li class="active"><a href="#"><i class="fas fa-home"></i>HOME</a></li>
+                <li><a href="#"><i class="fas fa-address-card"></i>ABOUT</a></li>
+                <li><a href="#"><i class="fas fa-clone"></i>SERVICES</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <Li class="hover-me"><a href="#">STAFF</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <Li><a href="#">Dhananajay(OWNER)</a></Li>
+                                        <Li><a href="#">SHIVANI(CEO)</a></Li>
+                                        <Li><a href="#">LOVELY(MANAGER)</a></Li>
+                                        <Li><a href="#">KABEER(FOOD MANAGER)</a></Li>
+                                        <Li><a href="#">SANJEEVANI(INCHARGE OF HOTEL)</a></Li>
+                                        <Li><a href="#">NANDINI(RECEPTION)</a></Li>
+                                        <Li><a href="#">SECURITY INCHARGE(ANSHU CHAUDHARY)</Li>
+                                        <Li><a href="#">ARYAT(ACCOUNT MANAGER)</a></Li>
+                                        <Li><a href="#"></a>DHRUV (HEAD OF STAFF)</Li>
+                                        
+                                    </ul>
+                                </div>
+                            </Li>
+
+                            <Li class="hover-me"><a href="#">ROOMS</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <Li><a href="#">AC ROOM</a></Li>
+                                        <Li><a href="#">NON AC</a></Li>
+                                        <Li><a href="#">SPECIAL ROOM</a></Li>
+                                        <Li><a href="#">MARRIAGE HALL</a></Li>
+                                        <Li><a href="#">BAAR HALL</a></Li>
+                                    </ul>
+                                </div>
+                            </Li>
+                            <Li class="hover-me"><a href="#">FOOD</a>
+                                <div class="sub-menu-2">
+                                    <ul>
+                                        <Li><a href="#">TANDOORI NON VEG STARTER</a></Li>
+                                        <Li><a href="#">INDIAN NON VEG</a></Li>
+                                        <Li><a href="#">THALI & COMBO</a></Li>
+                                        <Li><a href="#">CHINESE</a></Li>
+                                        <Li><a href="#">RICE</a></Li>
+                                        <Li><a href="#">SALAD</a></Li>
+                                        <Li><a href="#">CURD & RAITA </a></Li>
+                                        <Li><a href="#">ROTI / BREADS</a></Li>
+                                        <Li><a href="#">ANDA ITEM</a></Li>
+                                        <Li><a href="#">PANEER ITEM</a></Li>
+                                        <Li><a href="#">BIRYANI SPECIAL</a></Li>
+                                        <Li><a href="#">VEG ITEM</a></Li>
+                                        <Li><a href="#">SWEATS</a></Li>
+                                        <Li><a href="#">SAUTH INDIAN ITEMS</a></Li>
+                                        <Li><a href="#">NORTH INDIA ITEMS</a></Li>
+                                        <Li><a href="#">RAAJ BHOG</a></Li>
+                                        <Li><a href="#">SPECIAL THALI</a></Li>
+                                        <Li><a href="#">DRINKS</a></Li>
+                                        <Li><a href="#">COFFEE</a></Li>
+                                        <Li><a href="#">TEA</a></Li>
+                                        <Li><a href="#">FAST FOOD</a></Li>
+                                    </ul>
+                            </Li>
+                        </ul>
+                        </div>
+                </li>
+                <li><a href="#"><i class="fa fa-map-marker"></i></i>LOCATION</a>
+                    <div class="sub-menu-3">
+                        <ul>
+                            <Li><a href="#">Mathura</a></Li>
+                            <Li><a href="#">Agra</a></Li>
+                            <Li><a href="#">Delhi</a></Li>
+                            <Li><a href="#">NOIDA</a></Li>
+                            <Li><a href="#">JAIPUR</a></Li>
+                            <Li><a href="#">Gaziabad</a></Li>
+                            <Li><a href="#">odisha</a></Li>
+                            <Li><a href="#">PUNE</a></Li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#"><i class="fab fa-angellist"></i>FACILITIES</a>
+                    <div class="sub-menu-4">
+                        <ul>
+                            <Li><a href="#">CAR PARKING</a></Li>
+                            <Li><a href="#">MARRIAGE HALL</a></Li>
+                            <Li><a href="#">BOOK LIBRARY</a></Li>
+                            <Li><a href="#">BEAR BAAR</a></Li>
+                            <Li><a href="#">GROUND</a></Li>
+                            <Li><a href="#">GYM</a></Li>
+                            <Li><a href="#">SWIMMING POOL</a></Li>
+                            <Li><a href="#">WI-FI</a></Li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a href=""><i class='fas fa-sign-in-alt'></i>FEEDBACK</a>
+        </ul>
+    </nav>
+    <nav class="navlist2">
+        <ul>
+            <marquee>WELCOME TO OUR HOTEL IN KRISHNA NAGAR NEAR RADHA TEMPLE (MATHURA) FOR BOOKING ROOMS YOU CAN CONTACT ON THIS NUMBER 8302709642</marquee>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>HOTELIUM</h1>
+        <p>INDIA'S BEST HOTEL</p>
+        <button><a href="REGI.HTML">BOOK NOW</a></button>
+    </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
